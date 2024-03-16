@@ -14,3 +14,5 @@ source deploy.sh
 ```
 source delete.sh
 ```
+
+Experiment with various log configs in the `config.yaml` file and then rebuild container.
