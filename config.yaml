@@ -1,0 +1,17 @@
+receivers:
+  filelog:
+    include:
+      - /var/log/myapp/app.log
+exporters:
+  coralogix:
+    domain: "coralogix.us"
+    private_key: "yourkey"
+    application_name: "logtest"
+    subsystem_name: "logtest"
+    timeout: 30s
+
+service:
+  pipelines:
+    logs:
+      receivers: [ filelog ]
+      exporters: [ coralogix ]

@@ -1,0 +1,1 @@
+sudo docker run -idt --name otelcol otelcol 
