@@ -9,6 +9,6 @@ RUN rm otelcol-contrib_0.96.0_linux_amd64.tar.gz
 
 COPY entrypoint.sh /app/entrypoint.sh
 COPY main.py .
-COPY config.yaml .
+# COPY config.yaml .
 RUN chmod +x /app/*
 ENTRYPOINT ["/app/entrypoint.sh"]
