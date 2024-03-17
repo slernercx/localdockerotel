@@ -14,7 +14,7 @@ stream_handler = logging.StreamHandler()
 logger.addHandler(stream_handler)
 
 # Directory and file for log storage
-log_directory = "/var/log/myapp"
+log_directory = "/hostfs/var/log/myapp"
 log_file = f"{log_directory}/app.log"
 
 # Ensure log directory exists
@@ -41,9 +41,9 @@ def repeat_preamble_to_size(target_size_kb):
 def log_single_message_with_two_sizes():
     while True:
         log_entry = {
-            "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")[:-3] + "Z",
             "severity": "INFO",
-            "message": {
+            "body": {
                 "message1": repeat_preamble_to_size(22),
                 "message2": repeat_preamble_to_size(6)
             }

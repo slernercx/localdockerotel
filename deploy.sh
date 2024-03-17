@@ -1,1 +1,1 @@
-sudo docker run -idt --name otelcol -v "$(pwd)"/config.yaml:/app/config.yaml otelcol
+sudo docker run -idt --name otelcol -v "$(pwd)"/config.yaml:/app/config.yaml -v /var/log:/hostfs/var/log otelcol
